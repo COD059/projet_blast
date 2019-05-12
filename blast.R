@@ -5,6 +5,6 @@ untar("16SMicrobial.tar.gz", exdir="16SMicrobialDB")
 seq <- readAAStringSet(system.file("examples", "exampleAA.fasta", package="msa"))
 names(seq) <-  sapply(strsplit(names(seq), " "), "[", 1)
 
-bl <- blast(db="./16SMicrobialDB/16SMicrobial")
+bl <- blast(db="./16SMicrobialDB/16SMicrobial",type = "blastp")
 
 cl <- predict(bl, seq[1,])
